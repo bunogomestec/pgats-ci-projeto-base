@@ -15,6 +15,8 @@
    cd pgats-ci-projeto-base
    yarn
    ```
+yarn install -g playwright
+
 7. Execute os testes de unidade - isso vai gerar um relatório
    ```shell
    yarn run test
