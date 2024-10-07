@@ -11,12 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Definir o timezone para o Brasil (America/Sao_Paulo)
-      - name: Definindo Timezone para o Brasil
-        run: |
-          sudo timedatectl set-timezone America/Sao_Paulo
-          date  # Exibe a data e horário atuais com o timezone configurado
-
       - name: Instalando yarn
         run: npm install -g yarn
 
