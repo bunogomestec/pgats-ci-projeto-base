@@ -2,7 +2,7 @@ name: 'Execução Agendada'
 
 on:
   schedule:
-    - cron: '35 19 * * *'
+    - cron: '48 16 * * *'
 
 jobs:
   e2e-tests:
