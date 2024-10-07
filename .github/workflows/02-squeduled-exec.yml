@@ -2,11 +2,14 @@ name: 'Execução Agendada'
 
 on:
   schedule:
-    - cron: '59 16 7 10 *'
+    - cron: '59 16 7 10 *'  # Executa no dia 7 de outubro às 16:59 no horário UTC (13:59 no Brasil UTC-3)
 
 jobs:
   e2e-tests:
     runs-on: ['ubuntu-latest']
+    
+    env:
+      TZ: America/Sao_Paulo  # Definindo o timezone para o Brasil (UTC-3)
 
     steps:
       - uses: actions/checkout@v4
@@ -14,10 +17,10 @@ jobs:
       - name: Instalando yarn
         run: npm install -g yarn
 
-      - name: Instalando dependencias
+      - name: Instalando dependências
         run: yarn
 
-      - name: Instalando playwright
+      - name: Instalando Playwright
         run: yarn playwright install
 
       - name: Testes E2E (end-to-end)
