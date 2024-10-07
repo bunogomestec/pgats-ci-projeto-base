@@ -4,8 +4,8 @@
 name: 'Execução Agendada'
 
 on:
-    schedule:
-       - cron: '* * * * *'
+  schedule:
+        - cron: '0 8 * * 1'
 
 jobs:
     e2e-tests:
