@@ -1,8 +1,10 @@
-name: 'Execução Agendada'
+name: 'Execução por deploy'
 
 on:
-  schedule:
-    - cron: '25 17 * * *'  # Executa no dia 7 de outubro às 16:59 no horário UTC (13:59 no Brasil UTC-3)
+  workflow_run:
+    workflows: ['Execução Manual']
+    types:
+      - completed
 
 jobs:
   e2e-tests:
