@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: action/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: intalando Yarn
         run: npm install -g yarn
