@@ -11,17 +11,19 @@
 4. Faça um _Fork_ do projeto
 5. Clone o repositório para sua máquina (seu fork)
 6. Instale as dependências
+
    ```shell
    cd pgats-ci-projeto-base
    yarn
    ```
-yarn install -g playwright
+
+   yarn install -g playwright
 
 7. Execute os testes de unidade - isso vai gerar um relatório
    ```shell
    yarn run test
    ```
-8. Abra o relatório de cobertura de código em `reports/coverage/lcov-report` 
+8. Abra o relatório de cobertura de código em `reports/coverage/lcov-report`
 9. Execute os testes de mutação com o Stryker
    ```shell
    yarn run test:mutation
@@ -35,4 +37,5 @@ yarn install -g playwright
 13. Acesse a aplicação publicada [neste link](https://pgats-ci-example.netlify.app)
 
 ---
+
 💜⚡️
