@@ -51,8 +51,12 @@ jobs:
       - name: Instalando playwright
         run: yarn playwright install
 
+      - name: subir aplicação local
+        run: yarn start &
+
       - name: Testes E2E (end-to-end)
         run: yarn  run e2e
+
         env:
           URL: 'http://localhost:3000'
 
