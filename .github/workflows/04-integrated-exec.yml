@@ -19,10 +19,9 @@ jobs:
       - name: instalando dependencias
         run: yarn lint
 
-  unit: 
-
+  unit:
     runs-on: ['ubuntu-latest']
-    
+
     steps:
       - uses: actions/checkout@v4
 
