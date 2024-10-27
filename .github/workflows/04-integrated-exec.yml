@@ -4,63 +4,60 @@ on:
   workflow_dispatch:
 
 jobs:
-  inspect:
+  inaoect:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Instalando Yarn
+      - name: intalando Yarn
         run: npm install -g yarn
 
-      - name: Instalando dependências
+      - name: Instalando dependencias
         run: yarn
 
-      - name: Verificando lint
+      - name: instalando dependencias
         run: yarn lint
 
-  unit:
-    runs-on: ubuntu-latest
+  unit: 
 
+    runs-on: ['ubuntu-latest']
+    
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '16'  # Ajuste para a versão desejada do Node.js
+      - uses: actions/checkout@v4
 
-      - name: Instalando Yarn
+      - name: intalando Yarn
         run: npm install -g yarn
 
-      - name: Instalando dependências
+      - name: Instalando dependencias
         run: yarn
 
-      - name: Executando testes de unidade
+      - name: Testes de unidade
         run: yarn run test
 
   e2e-tests:
-    runs-on: ubuntu-latest
+    runs-on: ['ubuntu-latest']
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '16'
+      - uses: actions/checkout@v4
 
-      - name: Instalando Yarn
+      #- uses: action/setup-node@v4
+
+      - name: Instalando yarn
         run: npm install -g yarn
 
-      - name: Instalando dependências
+      - name: Instalando dependencias
         run: yarn
 
-      - name: Instalando Playwright
+      - name: Instalando playwright
         run: yarn playwright install
 
       - name: Testes E2E (end-to-end)
-        run: yarn run e2e
+        run: yarn  run e2e
         env:
           URL: 'http://localhost:3000'
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
           name: relatorio-de-testes
