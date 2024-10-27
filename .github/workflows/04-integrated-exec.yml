@@ -19,6 +19,22 @@ jobs:
       - name: instalando dependencias
         run: yarn lint
 
+  unit: 
+
+    runs-on: ['ubuntu-latest']
+    
+    steps:
+      - uses: action/setup-node@v4
+
+      - name: intalando Yarn
+        run: npm install -g yarn
+
+      - name: Instalando dependencias
+        run: yarn
+
+      - name: Testes de unidade
+        run: yarn run test
+
   e2e-tests:
     runs-on: ['ubuntu-latest']
 
